@@ -1,0 +1,34 @@
+<?php
+namespace App\Models;
+
+use App\Models\Model;
+use DateTime;
+
+class User extends Model {
+    
+    
+    /**
+     * constructor
+     * 
+     * @param string    $name       username
+     * @param string    $email      email
+     * @param DateTime  $created_at created time
+     * @param DateTime  $updated_at updated time
+     *
+     * @return void
+     */
+    public function __construct(
+        public string $name,
+        public string $password,
+        public string $email,
+        DateTime $created_at,
+        DateTime $updated_at
+    ){
+        parent::__construct($created_at, $updated_at);
+        $this->_save();
+    }
+
+    private function _save():void {
+        
+    }
+}
